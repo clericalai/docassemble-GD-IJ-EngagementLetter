@@ -1,13 +1,11 @@
-﻿
-
 [FILE docassemble.GD-IJ-EngagementLetter:firmlogo.png]
 
 _${ Effective.Date }_
 
 Via Electronic Mail to: _${ Matter.Client.Email }_
 
-> ${ Matter.Client.Prefix } ${ Matter.Client.FirstName } ${ Matter.Client.FirstName } <br>
-> ${ Matter.Client.Address }
+ ${ Matter.Client.Prefix } ${ Matter.Client.FirstName } ${ Matter.Client.FirstName }
+ ${ Matter.Client.Address }
 
 *Re: Letter of Engagement*
 
@@ -74,7 +72,7 @@ Dated: ${ Effective.Date }
 | /s/ ${ Matter.ResponsibleAttorney.Name }  | By: ${ Client_Signor_Signature } |
 | Name:  ${ Matter.ResponsibleAttorney.Name } | Name: ${ Client_Signor_Name } |
 | ${ Matter.ResponsibleAttorney.Role }      | Its: ${ Signor.Role } |
-| _Address:_ <br> 110 E Houston St, <br> Eighth Floor, Box 120, <br> San Antonio, Texas 78205      | _Address:_ <br> ${ Client_Address } |
+| _Address:_  110 E Houston St,  Eighth Floor, Box 120,  San Antonio, Texas 78205      | _Address:_  ${ Client_Address } |
 
 Enclosures: ${ Attachments }
 
