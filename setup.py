@@ -47,13 +47,12 @@ def find_package_data(where='.', package='', exclude=standard_exclude, exclude_d
 setup(name='docassemble.GD-IJ-EngagementLetter',
       version='0.1',
       description=('A docassemble extension.'),
-      author=' Administrator',
+      author='Nathan Roach',
       author_email='nathan+admin@gooddocs.io',
       license='MIT',
-      url='http://docassemble.org',
+      url='http://GoodDocs.IO',
       packages=find_packages(),
       namespace_packages = ['docassemble'],
       zip_safe = False,
       package_data=find_package_data(where='docassemble/GD-IJ-EngagementLetter/', package='docassemble.GD-IJ-EngagementLetter'),
      )
-
