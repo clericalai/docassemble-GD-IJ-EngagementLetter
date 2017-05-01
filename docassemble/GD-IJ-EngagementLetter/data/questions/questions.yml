@@ -115,7 +115,7 @@ subquestion: |
 
   [${ interview_url() }](${ interview_url() })
 ---
-  question: |
+question: |
   What is the e-mail address of the client signor?
 fields:
   - Client Signor: client_email
