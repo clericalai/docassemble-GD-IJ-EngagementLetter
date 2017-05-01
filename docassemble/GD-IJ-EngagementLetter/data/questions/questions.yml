@@ -138,7 +138,7 @@ fields:
 ---
 mandatory: true
 question: |
-Thank you.  We will be in touch.
+  Thank you.  We will be in touch.
 decoration: exit
 buttons:
   - Exit: leave
