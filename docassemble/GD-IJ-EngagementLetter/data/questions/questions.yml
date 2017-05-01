@@ -75,7 +75,7 @@ default role: attorney
 code: |
   multi_user = True
   role = 'attorney'
-  if introduction_made and participants_invited:
+  if participants_invited:
     if user_logged_in():
       if user_info().email == client_email:
         role = 'client'
@@ -96,20 +96,6 @@ subquestion: |
   Press **Check** to check on the status.
 buttons:
   - Check: refresh
----
-field: introduction_made
-question: |
-  Welcome to the engagement letter generator.
-subquestion:
-  This is the start of the engagement letter system.
-  % if role == 'attorney':
-    You are the attorney. Your email is ${ user_info().email }
-  % elif role == 'client':
-    You are the client
-  % else
-  We could not determine your role
-  % endif
-  To continue, press **Continue**.
 ---
 code: |
   if attorney_email == client_email:
