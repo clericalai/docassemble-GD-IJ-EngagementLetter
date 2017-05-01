@@ -102,9 +102,9 @@ question: |
   Welcome to the engagement letter generator.
 subquestion:
   This is the start of the engagement letter system.
-  % if role = 'attorney':
+  % if role == 'attorney':
     You are the attorney. Your email is ${ user_info().email }
-  % elif role = 'client':
+  % elif role == 'client':
     You are the client
   % else
   We could not determine your role
