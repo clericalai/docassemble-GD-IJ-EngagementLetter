@@ -136,7 +136,3 @@ fields:
   - Client Signor: client.email
     datatype: email
 ---
-mandatory: True
-code: |
-  user_done
----
