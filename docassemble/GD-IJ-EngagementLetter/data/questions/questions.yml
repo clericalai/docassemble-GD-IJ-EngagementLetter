@@ -8,8 +8,7 @@ metadata:
     - name: Nathan Roach
     - organization: GoodDocs.io
   revision_date: 2017-04-28
----
-debug: True
+  debug: True
 ---
 modules:
   - docassemble.base.util
