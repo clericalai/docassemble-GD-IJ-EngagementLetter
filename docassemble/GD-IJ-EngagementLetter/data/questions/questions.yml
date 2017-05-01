@@ -136,3 +136,10 @@ fields:
   - Client Signor: client.email
     datatype: email
 ---
+mandatory: true
+question: |
+Thank you.  We will be in touch.
+decoration: exit
+buttons:
+  - Exit: leave
+---
