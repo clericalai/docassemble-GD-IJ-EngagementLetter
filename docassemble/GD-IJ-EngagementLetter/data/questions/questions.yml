@@ -23,8 +23,8 @@ objects:
   - pleading: LegalFiling
   - court: Court
   - role_change: RoleChangeTracker # important
- comment: |
-  An "objects" section defines variables that are docassemble objects.
+# comment: |
+#  An "objects" section defines variables that are docassemble objects.
 ---
 mandatory: true
 code: |
