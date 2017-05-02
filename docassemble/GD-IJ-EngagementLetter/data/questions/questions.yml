@@ -63,6 +63,7 @@ comment: |
   object is called village_idiot, it will ask "What is the village
   idiot's name?"
 ---
+mandatory: true 
 default role: client
 code: |
   multi_user = True
