@@ -30,19 +30,19 @@ You, **${ Matter.Client.FirstName } ${ Matter.Client.FirstName }**, are our clie
 ## % endif 
 
 **Recording time.**
-% if fee_structure is 'flat_fee' or 'monthly_retainer':
+## % if fee_structure is 'flat_fee' or 'monthly_retainer':
   Our goal is to create an open, flexible relationship that allows you the freedom to consult us without being concerned about the expense associated with every call or email or issue you ask us to consider.  For that reason, we do not anticipate tracking the precise amount of time spent on each individual communication or consultation.  However, to facilitate future discussions about the reasonableness of the amounts incurred, we may track the amount of time spent on substantive projects requiring more than an hour of time.
 
-% elif if fee_structure is 'hourly':
+## % elif if fee_structure is 'hourly':
   You agree to pay at our prevailing rates, attached to this Engagement Letter as Schedule A and are incorporated as if fully set forth herein.
 
 The rates on this schedule are subject to change on 30 days’ written notice to Client.  If Client declines to pay increased rates, Attorney will have the right to withdraw as attorney for Client.
 
 The time charged may include the time Attorney spends on telephone calls relating to Client’s matter, including calls with Client, witnesses, opposing counsel or court personnel.  The legal personnel assigned to Client’s matter may confer among themselves about the matter, as required and appropriate.  When they do confer, each person will charge for the time expended, as long as the work done is reasonably necessary and not duplicative.  Likewise, if more than one of the legal personnel attends a meeting, court hearing or other proceeding, each will charge for the time spent.  Attorney will charge for waiting time in court and elsewhere and for travel time, both local and out of town.  Time is charged in minimum units of one-tenth (. 1) of an hour. 	
 
-% else:
+## % else:
 You agree to pay at our prevailing rates, currently $[NBSP]${ Hourly.Overage.Fee } per hour, and subject to change upon 30 days’ written notice to Client.  If Client declines to pay increased rates, Attorney will have the right to withdraw as attorney for Client.
-% endif 
+## % endif 
 
 **Billing for services outside the scope of this agreement.**  If you require services on a matter that we determine falls outside of the scope of this Engagement, we will handle such services on mutually-acceptable fee terms and pursuant to a separate fee agreement. These fee terms may be hourly, a contingent fee, a blend of hourly and contingent, or a lump sum, as we both agree is most appropriate for each separate matter. Our current rates are $[NBSP]${ Hourly.Overage.Fee } per hour. Examples of matters that may fall outside of the scope of general counsel matters are complex commercial transactions, litigation, regulatory matters, or personal matters.
 
