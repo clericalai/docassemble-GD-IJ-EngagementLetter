@@ -64,21 +64,19 @@ comment: |
   idiot's name?"
 ---
 mandatory: true
-default role: client
+default role: attorney
 code: |
   multi_user = True
   if user_logged_in() and user_has_privilege('advocate'):
-    attorney = user
     role = 'attorney'
   else:
-    client = user
     role = 'client'
   set_info(user=user, role=role)
 comment: |
-  The default role is "client" and an optional role is "attorney."
+  The default role is "attorney" and an optional role is "client."
   Unless otherwise specified, all questions require the user to be a
-  "client."  The user is assumed to have the "attorney" role in this
-  interview if the user is logged in and the user has "attorney" as a
+  "attorney."  The user is assumed to have the "client" role in this
+  interview if the user is logged in and the user has "client" as a
   user role.
   The functions in docassemble.base.util need to know who the user
   is.  The set_info function communicates that information to the
@@ -116,9 +114,10 @@ subquestion: |
   [${ interview_url() }](${ interview_url() })
 ---
 mandatory: true
+role: client
 question: Thanks for engaging our firm.  We will be in contact regarding next steps.
 attachment:
-  - name: ${ client.name } Engagement Letter
-    filename: ${ client.name }-Engagement-Letter
+  - name: ${ user_info().name } Engagement Letter
+    filename: ${ user_info().name }-Engagement-Letter
     content file: TEMPLATE_Engagement Letter_Individual.md
 ---
