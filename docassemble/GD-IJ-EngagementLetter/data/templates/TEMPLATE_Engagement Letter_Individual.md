@@ -21,13 +21,10 @@ You, **${ Matter.Client.FirstName } ${ Matter.Client.FirstName }**, are our clie
 
 % if fee_structure is 'flat_fee':
   You agree to pay Innocenti Jones a flat fee of $[NBSP]${ Monthly.Flat.Fee }. At least ${ Pctg.Deposit.Fee } percent of the fee must be received before we will render any services associated with this engagement.
-
 % elif if fee_structure is 'monthly_retainer':
   You agree to pay Innocenti Jones a monthly flat fee of $[NBSP]${ Monthly.Flat.Fee }. Modification of monthly amount.   After the first ${ Initial.Term } months of this engagement, with reasonable notice, we or you may propose to modify this agreement.  We agree to review the amount of actual time expended and the future expectations and discuss whether an adjustment is appropriate. 
-
 % elif if fee_structure is 'hourly':
   Fees will be billed monthly and invoiced to client.  Invoices are due and payable  upon receipt. At least $[NBSP]${ Fixed.Deposit.Fee } of the fee must be received before we will render any services associated with this engagement.
-
 % else:
   Fees will be billed monthly and invoiced to client.  Invoices are due and payable  upon receipt.
 % endif 
