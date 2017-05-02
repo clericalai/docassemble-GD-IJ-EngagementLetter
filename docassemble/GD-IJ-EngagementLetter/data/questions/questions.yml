@@ -60,6 +60,10 @@ fields:
     default: ${ x.last_name_hint() }
   - Suffix: x.name.suffix
     required: False
+  - Suffix: x.name.email
+    default: ${ x.email_hint() }
+    datatype: email
+    required: False
     code: |
       name_suffix()
 comment: |
@@ -133,12 +137,6 @@ subquestion: |
   Tell them to go to the following URL:
 
   [${ interview_url() }](${ interview_url() })
----
-question: |
-  What is the e-mail address of the client signor?
-fields:
-  - Client Signor: client.email
-    datatype: email
 ---
 mandatory: true
 question: Thanks for engaging our firm.  We will be in contact regarding next steps.
