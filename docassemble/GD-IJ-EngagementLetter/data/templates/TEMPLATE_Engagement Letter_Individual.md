@@ -4,12 +4,12 @@ _${ EffectiveDate }_
 
 Via Electronic Mail to: _${ client.email }_
 
- ${ client.prefix } ${ client.name }
+ ${ client.salutation } ${ client.name }
  ${ client.address }
 
 *Re: Letter of Engagement*
 
-Dear ${ client.prefix } ${ client.lastname }:  
+Dear ${ client.salutation } ${ client.lastname }:  
 
 You, **${ Matter.Client.FirstName } ${ Matter.Client.FirstName }**, are our client. This letter confirms the terms on which we will represent You. If the matter for which we are being engaged involves an entity, a separate Engagement will be required to represent the entity. Our representation of an entity does not mean that we represent any managers, officers, directors, managers, employees, or shareholders in their individual capacities. 
    
