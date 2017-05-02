@@ -1,28 +1,28 @@
 [FILE docassemble.GD-IJ-EngagementLetter:firmlogo.png]
 
-_${ Effective.Date }_
+_${ EffectiveDate }_
 
-Via Electronic Mail to: _${ Matter.Client.Email }_
+Via Electronic Mail to: _${ client.email }_
 
- ${ Matter.Client.Prefix } ${ Matter.Client.FirstName } ${ Matter.Client.FirstName }
- ${ Matter.Client.Address }
+ ${ client.prefix } ${ client.name }
+ ${ client.address }
 
 *Re: Letter of Engagement*
 
-Dear ${ Matter.Client.Prefix } ${ Matter.Client.LastName }:  
+Dear ${ client.prefix } ${ client.lastname }:  
 
 You, **${ Matter.Client.FirstName } ${ Matter.Client.FirstName }**, are our client. This letter confirms the terms on which we will represent You. If the matter for which we are being engaged involves an entity, a separate Engagement will be required to represent the entity. Our representation of an entity does not mean that we represent any managers, officers, directors, managers, employees, or shareholders in their individual capacities. 
    
 **Scope of Services Covered.**   We will receive a flat fee in exchange for full access to our time, advice, and consultation regarding routine day-to-day legal issues and matters that you may encounter. We refer to these as “general counsel services.” These may include business, corporate, employment, and human resources issues, basic contract or document review and advice, problem solving, pre-litigation negotiation and dispute resolution, and the like.  Whether a matter or issue falls outside the scope of this agreement will be handled with common sense, mutual respect, and fairness to both parties.
 
-**Commencement of Representation.**  We agree that the retainer under this Agreement takes effect as of ${ Effective.Date }. 
+**Commencement of Representation.**  We agree that the retainer under this Agreement takes effect as of ${ EffectiveDate }. 
 
 **Attorneys' Fees.**
 
 ## % if fee_structure is 'flat_fee':
-  You agree to pay Innocenti Jones a flat fee of $[NBSP]${ Monthly.Flat.Fee }. At least ${ Pctg.Deposit.Fee } percent of the fee must be received before we will render any services associated with this engagement.
+  You agree to pay Innocenti Jones a flat fee of $[NBSP]${ MonthlyFlatFee }. At least ${ Pctg.Deposit.Fee } percent of the fee must be received before we will render any services associated with this engagement.
 ## % elif if fee_structure is 'monthly_retainer':
-  You agree to pay Innocenti Jones a monthly flat fee of $[NBSP]${ Monthly.Flat.Fee }. Modification of monthly amount.   After the first ${ Initial.Term } months of this engagement, with reasonable notice, we or you may propose to modify this agreement.  We agree to review the amount of actual time expended and the future expectations and discuss whether an adjustment is appropriate. 
+  You agree to pay Innocenti Jones a monthly flat fee of $[NBSP]${ MonthlyFlatFee }. Modification of monthly amount.   After the first ${ InitialTerm } months of this engagement, with reasonable notice, we or you may propose to modify this agreement.  We agree to review the amount of actual time expended and the future expectations and discuss whether an adjustment is appropriate. 
 ## % elif if fee_structure is 'hourly':
   Fees will be billed monthly and invoiced to client.  Invoices are due and payable  upon receipt. At least $[NBSP]${ Fixed.Deposit.Fee } of the fee must be received before we will render any services associated with this engagement.
 ## % else:
@@ -41,7 +41,7 @@ The rates on this schedule are subject to change on 30 days’ written notice to
 The time charged may include the time Attorney spends on telephone calls relating to Client’s matter, including calls with Client, witnesses, opposing counsel or court personnel.  The legal personnel assigned to Client’s matter may confer among themselves about the matter, as required and appropriate.  When they do confer, each person will charge for the time expended, as long as the work done is reasonably necessary and not duplicative.  Likewise, if more than one of the legal personnel attends a meeting, court hearing or other proceeding, each will charge for the time spent.  Attorney will charge for waiting time in court and elsewhere and for travel time, both local and out of town.  Time is charged in minimum units of one-tenth (. 1) of an hour. 	
 
 ## % else:
-You agree to pay at our prevailing rates, currently $[NBSP]${ Hourly.Overage.Fee } per hour, and subject to change upon 30 days’ written notice to Client.  If Client declines to pay increased rates, Attorney will have the right to withdraw as attorney for Client.
+You agree to pay at our prevailing rates, currently $[NBSP]${ HourlyOverageFee } per hour, and subject to change upon 30 days’ written notice to Client.  If Client declines to pay increased rates, Attorney will have the right to withdraw as attorney for Client.
 ## % endif 
 
 **Billing for services outside the scope of this agreement.**  If you require services on a matter that we determine falls outside of the scope of this Engagement, we will handle such services on mutually-acceptable fee terms and pursuant to a separate fee agreement. These fee terms may be hourly, a contingent fee, a blend of hourly and contingent, or a lump sum, as we both agree is most appropriate for each separate matter. Our current rates are $[NBSP]${ Hourly.Overage.Fee } per hour. Examples of matters that may fall outside of the scope of general counsel matters are complex commercial transactions, litigation, regulatory matters, or personal matters.
@@ -62,14 +62,14 @@ Innocenti Jones PLLC
 
 THE INDIVIDUAL AND ENTITY BELOW AGREE TO RETAIN INNOCENTI JONES PLLC ON THE FOREGOING TERMS.
 
-Dated: ${ Effective.Date }
+Dated: ${ EffectiveDate }
 
 | for **Innocenti Jones PLLC**                     | for **Client** |
 |---------------------------------|-------------|
-| /s/ ${ Matter.ResponsibleAttorney.Name }  | By: ${ Client_Signor_Signature } |
-| Name:  ${ Matter.ResponsibleAttorney.Name } | Name: ${ Client_Signor_Name } |
-| ${ Matter.ResponsibleAttorney.Role }      | Its: ${ Signor.Role } |
-| _Address:_  110 E Houston St,  Eighth Floor, Box 120,  San Antonio, Texas 78205      | _Address:_  ${ Client_Address } |
+| /s/ ${ attorney.name }  | By: ${ client.signature } |
+| Name:  ${ attorney.name } | Name: ${ client.name } |
+| ${ attorney.title }      | Its: ${ client.title } |
+| _Address:_  110 E Houston St,  Eighth Floor, Box 120,  San Antonio, Texas 78205      | _Address:_  ${ client.address } |
 
 Enclosures: ${ Attachments }
 
