@@ -10,8 +10,6 @@ metadata:
   revision_date: 2017-04-28
   debug: True
 ---
-
----
 modules:
   - docassemble.base.util
   - docassemble.base.legal
