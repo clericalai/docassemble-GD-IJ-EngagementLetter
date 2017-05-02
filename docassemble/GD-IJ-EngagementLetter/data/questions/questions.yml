@@ -10,6 +10,8 @@ metadata:
   revision_date: 2017-04-28
   debug: True
 ---
+
+---
 modules:
   - docassemble.base.util
   - docassemble.base.legal
@@ -24,8 +26,6 @@ objects:
   - court: Court
 comment: |
   An "objects" section defines variables that are docassemble objects.
-  The object types here are defined in the docassemble.base.core and
-  docassemble.base.legal modules.
 ---
 mandatory: true
 code: |
@@ -137,9 +137,9 @@ fields:
     datatype: email
 ---
 mandatory: true
-question: |
-  Thank you.  We will be in touch.
-decoration: exit
-buttons:
-  - Exit: leave
+question: Thanks for engaging our firm.  We will be in contact regarding next steps.
+attachment:
+  - name: ${ client.name } Engagement Letter
+    filename: ${ client.name }-Engagement-Letter
+    content file: TEMPLATE_Engagement Letter_Individual.md
 ---
