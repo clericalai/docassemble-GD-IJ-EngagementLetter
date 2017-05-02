@@ -55,7 +55,7 @@ question: |
   What is ${ x.object_possessive('email') }?
 fields:
   - email: x.email
-    default: ${ x.email_hint() }
+    default: ${ x.email_address() }
     datatype: email
     required: False
 code: |
