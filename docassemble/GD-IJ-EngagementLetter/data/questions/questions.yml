@@ -71,8 +71,7 @@ code: |
     role = 'attorney'
   else:
     role = 'client'
-  set_info(user=user, role=role)
-comment: |
+  comment: |
   The default role is "attorney" and an optional role is "client."
   Unless otherwise specified, all questions require the user to be a
   "attorney."  The user is assumed to have the "client" role in this
