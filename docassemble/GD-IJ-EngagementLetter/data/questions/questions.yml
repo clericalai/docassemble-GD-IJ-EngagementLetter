@@ -76,10 +76,10 @@ default role: client
 code: |
   multi_user = True
   if user_logged_in() and user_has_privilege('advocate'):
-    user = attorney
+    attorney = user
     role = 'attorney'
   else:
-    user = client
+    client = user
     role = 'client'
   set_info(user=user, role=role)
 comment: |

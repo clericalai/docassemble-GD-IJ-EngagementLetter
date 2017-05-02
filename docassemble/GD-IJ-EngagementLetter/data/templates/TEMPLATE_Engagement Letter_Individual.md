@@ -20,11 +20,11 @@ You, **${ Matter.Client.FirstName } ${ Matter.Client.FirstName }**, are our clie
 **Attorneys' Fees.**
 
 ## % if fee_structure is 'flat_fee':
-  You agree to pay Innocenti Jones a flat fee of $[NBSP]${ MonthlyFlatFee }. At least ${ Pctg.Deposit.Fee } percent of the fee must be received before we will render any services associated with this engagement.
+  You agree to pay Innocenti Jones a flat fee of $[NBSP]${ MonthlyFlatFee }. At least ${ PctgDepositFee } percent of the fee must be received before we will render any services associated with this engagement.
 ## % elif if fee_structure is 'monthly_retainer':
   You agree to pay Innocenti Jones a monthly flat fee of $[NBSP]${ MonthlyFlatFee }. Modification of monthly amount.   After the first ${ InitialTerm } months of this engagement, with reasonable notice, we or you may propose to modify this agreement.  We agree to review the amount of actual time expended and the future expectations and discuss whether an adjustment is appropriate. 
 ## % elif if fee_structure is 'hourly':
-  Fees will be billed monthly and invoiced to client.  Invoices are due and payable  upon receipt. At least $[NBSP]${ Fixed.Deposit.Fee } of the fee must be received before we will render any services associated with this engagement.
+  Fees will be billed monthly and invoiced to client.  Invoices are due and payable  upon receipt. At least $[NBSP]${ FixedDepositFee } of the fee must be received before we will render any services associated with this engagement.
 ## % else:
   Fees will be billed monthly and invoiced to client.  Invoices are due and payable  upon receipt.
 ## % endif 
@@ -44,7 +44,7 @@ The time charged may include the time Attorney spends on telephone calls relatin
 You agree to pay at our prevailing rates, currently $[NBSP]${ HourlyOverageFee } per hour, and subject to change upon 30 days’ written notice to Client.  If Client declines to pay increased rates, Attorney will have the right to withdraw as attorney for Client.
 ## % endif 
 
-**Billing for services outside the scope of this agreement.**  If you require services on a matter that we determine falls outside of the scope of this Engagement, we will handle such services on mutually-acceptable fee terms and pursuant to a separate fee agreement. These fee terms may be hourly, a contingent fee, a blend of hourly and contingent, or a lump sum, as we both agree is most appropriate for each separate matter. Our current rates are $[NBSP]${ Hourly.Overage.Fee } per hour. Examples of matters that may fall outside of the scope of general counsel matters are complex commercial transactions, litigation, regulatory matters, or personal matters.
+**Billing for services outside the scope of this agreement.**  If you require services on a matter that we determine falls outside of the scope of this Engagement, we will handle such services on mutually-acceptable fee terms and pursuant to a separate fee agreement. These fee terms may be hourly, a contingent fee, a blend of hourly and contingent, or a lump sum, as we both agree is most appropriate for each separate matter. Our current rates are $[NBSP]${ HourlyOverageFee } per hour. Examples of matters that may fall outside of the scope of general counsel matters are complex commercial transactions, litigation, regulatory matters, or personal matters.
 
 **Termination.** At any time, with reasonable written notice, you or we may terminate this agreement.  If that happens, we agree to comply with all applicable ethical requirements to ensure that you are not prejudiced by that termination. 
 
