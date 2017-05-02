@@ -23,16 +23,11 @@ objects:
   - pleading: LegalFiling
   - court: Court
   - role_change: RoleChangeTracker # important
-# comment: |
-#  An "objects" section defines variables that are docassemble objects.
 ---
 mandatory: true
 code: |
   case.court = court
   pleading.case = case
-#comment: |
-  # This code sets some basic relations among the objects created in the
-  # objects block of this YAML file.
 ---
 generic object: Individual
 question: |
@@ -63,11 +58,20 @@ code: |
   import time
   EffectiveDate = time.strftime("%m/%d/%Y")
 ---
+role: client
+code: |
+  client_email = client.email_address()
+  client_salutation = client.salutation
+  client_name = client.name
+  client_address = client.address_block()
+# this block is intended to populate all the variables in the template with object properties prior to assembly
+# it may be necessary to uncouple this from a role declaration if order of operations fails to prioritize this correctly
+---
 mandatory: true
 role: client
 question: Thanks for engaging our firm.  We will be in contact regarding next steps.
 attachment:
-  - name: ${ user_info().name } Engagement Letter
-    filename: ${ user_info().name }-Engagement-Letter
+  - name: ${ client_name } Engagement Letter
+    filename: ${ client_name }-Engagement-Letter
     content file: TEMPLATE_Engagement Letter_Individual.md
 ---

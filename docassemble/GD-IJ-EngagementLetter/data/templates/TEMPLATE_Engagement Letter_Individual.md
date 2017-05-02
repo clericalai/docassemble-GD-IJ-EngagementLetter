@@ -2,16 +2,16 @@
 
 _${ EffectiveDate }_
 
-Via Electronic Mail to: _${ client.email }_
+Via Electronic Mail to: _${ client_email }_
 
- ${ client.salutation } ${ client.name }
- ${ client.address }
+ ${ client_salutation } ${ client_name }
+ ${ client_address }
 
 *Re: Letter of Engagement*
 
-Dear ${ client.salutation } ${ client.lastname }:  
+Dear ${ client_salutation } ${ client_lastname }:  
 
-You, **${ Matter.Client.FirstName } ${ Matter.Client.FirstName }**, are our client. This letter confirms the terms on which we will represent You. If the matter for which we are being engaged involves an entity, a separate Engagement will be required to represent the entity. Our representation of an entity does not mean that we represent any managers, officers, directors, managers, employees, or shareholders in their individual capacities. 
+You, **${ client_FirstName } ${ client_FirstName }**, are our client. This letter confirms the terms on which we will represent You. If the matter for which we are being engaged involves an entity, a separate Engagement will be required to represent the entity. Our representation of an entity does not mean that we represent any managers, officers, directors, managers, employees, or shareholders in their individual capacities. 
    
 **Scope of Services Covered.**   We will receive a flat fee in exchange for full access to our time, advice, and consultation regarding routine day-to-day legal issues and matters that you may encounter. We refer to these as “general counsel services.” These may include business, corporate, employment, and human resources issues, basic contract or document review and advice, problem solving, pre-litigation negotiation and dispute resolution, and the like.  Whether a matter or issue falls outside the scope of this agreement will be handled with common sense, mutual respect, and fairness to both parties.
 
@@ -66,10 +66,10 @@ Dated: ${ EffectiveDate }
 
 | for **Innocenti Jones PLLC**                     | for **Client** |
 |---------------------------------|-------------|
-| /s/ ${ attorney.name }  | By: ${ client.signature } |
-| Name:  ${ attorney.name } | Name: ${ client.name } |
-| ${ attorney.title }      | Its: ${ client.title } |
-| _Address:_  110 E Houston St,  Eighth Floor, Box 120,  San Antonio, Texas 78205      | _Address:_  ${ client.address } |
+| /s/ ${ attorney.name }  | By: ${ client_signature } |
+| Name:  ${ attorney.name } | Name: ${ client_name } |
+| ${ attorney.title }      | Its: ${ client_title } |
+| _Address:_  110 E Houston St,  Eighth Floor, Box 120,  San Antonio, Texas 78205      | _Address:_  ${ client_address } |
 
 Enclosures: ${ Attachments }
 
