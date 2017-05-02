@@ -41,8 +41,8 @@ fields:
     default: ${ x.last_name_hint() }
   - Suffix: x.name.suffix
     required: False
-      code: |
-      name_suffix()
+code: |
+  name_suffix()
 # comment: |
 #   If the object does not have a name yet, generic questions can refer
 #   to it by the name of the variable itself.  For example, suppose you
@@ -58,6 +58,8 @@ fields:
     default: ${ x.email_hint() }
     datatype: email
     required: False
+code: |
+  email()
 ---
 code: |
   import time
