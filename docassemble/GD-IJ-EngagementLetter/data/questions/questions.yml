@@ -37,19 +37,6 @@ comment: |
 ---
 generic object: Individual
 question: |
-  What is ${ x.possessive('e-mail address') }?
-fields:
-  - E-mail: x.email
-    datatype: email
-comment: |
-  The datatype "email" presents a text box that is like ordinary text
-  boxes except that validation is applied that checks to make sure the
-  e-mail address is valid.  Also, on supporting mobile web browsers,
-  there is a different keyboard option (e.g, the @ sign is readily
-  available).
----
-generic object: Individual
-question: |
   What is ${ x.object_possessive('name') }?
 fields:
   - First Name: x.name.first
