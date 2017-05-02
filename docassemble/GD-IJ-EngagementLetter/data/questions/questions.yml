@@ -22,16 +22,16 @@ objects:
   - attorney: Individual
   - pleading: LegalFiling
   - court: Court
-comment: |
-  An "objects" section defines variables that are docassemble objects.
+# comment: |
+#  An "objects" section defines variables that are docassemble objects.
 ---
 mandatory: true
 code: |
   case.court = court
   pleading.case = case
-comment: |
-  This code sets some basic relations among the objects created in the
-  objects block of this YAML file.
+#comment: |
+  # This code sets some basic relations among the objects created in the
+  # objects block of this YAML file.
 ---
 generic object: Individual
 question: |
@@ -51,15 +51,15 @@ fields:
     required: False
     code: |
       name_suffix()
-comment: |
-  If the object does not have a name yet, generic questions can refer
-  to it by the name of the variable itself.  For example, suppose you
-  create an object, case.judge, with the class of Individual.  If the
-  name of case.judge is ever needed, docassemble will use the question
-  above to ask "What is the name of the judge in the case?"  If the
-  object is called user, it will ask "What is your name?"  If the
-  object is called village_idiot, it will ask "What is the village
-  idiot's name?"
+# comment: |
+#   If the object does not have a name yet, generic questions can refer
+#   to it by the name of the variable itself.  For example, suppose you
+#   create an object, case.judge, with the class of Individual.  If the
+#   name of case.judge is ever needed, docassemble will use the question
+#   above to ask "What is the name of the judge in the case?"  If the
+#   object is called user, it will ask "What is your name?"  If the
+#   object is called village_idiot, it will ask "What is the village
+#   idiot's name?"
 ---
 mandatory: true
 default role: attorney
@@ -69,18 +69,18 @@ code: |
     role = 'attorney'
   else:
     role = 'client'
-  comment: |
-  The default role is "attorney" and an optional role is "client."
-  Unless otherwise specified, all questions require the user to be a
-  "attorney."  The user is assumed to have the "client" role in this
-  interview if the user is logged in and the user has "client" as a
-  user role.
-  The functions in docassemble.base.util need to know who the user
-  is.  The set_info function communicates that information to the
-  docassemble.base.util module.  Since the code is paired with the
-  "default role" declaration, this code is run as "initial" code,
-  meaning that it is run every time docassemble processes the
-  interview (i.e., every time the screen loads).
+  # comment: |
+  # The default role is "attorney" and an optional role is "client."
+  # Unless otherwise specified, all questions require the user to be a
+  # "attorney."  The user is assumed to have the "client" role in this
+  # interview if the user is logged in and the user has "client" as a
+  # user role.
+  # The functions in docassemble.base.util need to know who the user
+  # is.  The set_info function communicates that information to the
+  # docassemble.base.util module.  Since the code is paired with the
+  # "default role" declaration, this code is run as "initial" code,
+  # meaning that it is run every time docassemble processes the
+  # interview (i.e., every time the screen loads).
 ---
 code: |
   import time
@@ -107,7 +107,7 @@ field: participants_invited
 question: |
   Invite the client signor
 subquestion: |
-  Tell them to go to the following URL:
+  Tell them to go to the following URL
   [${ interview_url() }](${ interview_url() })
 ---
 mandatory: true
