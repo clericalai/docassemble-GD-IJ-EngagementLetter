@@ -41,11 +41,7 @@ fields:
     default: ${ x.last_name_hint() }
   - Suffix: x.name.suffix
     required: False
-  - Suffix: x.name.email
-    default: ${ x.email_hint() }
-    datatype: email
-    required: False
-    code: |
+      code: |
       name_suffix()
 # comment: |
 #   If the object does not have a name yet, generic questions can refer
@@ -53,6 +49,15 @@ fields:
 #   create an object, case.judge, with the class of Individual.  If the
 #   name of case.judge is ever needed, docassemble will use the question
 #   above to ask "What is the name of the judge in the case?"
+---
+generic object: Individual
+question: |
+  What is ${ x.object_possessive('email') }?
+fields:
+  - email: x.email
+    default: ${ x.email_hint() }
+    datatype: email
+    required: False
 ---
 code: |
   import time
