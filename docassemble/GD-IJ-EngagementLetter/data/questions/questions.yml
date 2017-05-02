@@ -101,6 +101,10 @@ comment: |
     else:
       recipients_ok = True
 ---
+code: |
+  import time
+  EffectiveDate = time.strftime("%m/%d/%Y")
+---
 event: role_event
 question: Waiting on another participant
 subquestion: |
