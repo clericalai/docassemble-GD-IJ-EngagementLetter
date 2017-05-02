@@ -20,24 +20,24 @@ You, **${ Matter.Client.FirstName } ${ Matter.Client.FirstName }**, are our clie
 **Attorneys' Fees.**
 
 % if fee_structure is 'flat_fee':
-You agree to pay Innocenti Jones a flat fee of $[NBSP]${ Monthly.Flat.Fee }. At least ${ Pctg.Deposit.Fee } percent of the fee must be received before we will render any services associated with this engagement.
+  You agree to pay Innocenti Jones a flat fee of $[NBSP]${ Monthly.Flat.Fee }. At least ${ Pctg.Deposit.Fee } percent of the fee must be received before we will render any services associated with this engagement.
 
 % elif if fee_structure is 'monthly_retainer':
-You agree to pay Innocenti Jones a monthly flat fee of $[NBSP]${ Monthly.Flat.Fee }. Modification of monthly amount.   After the first ${ Initial.Term } months of this engagement, with reasonable notice, we or you may propose to modify this agreement.  We agree to review the amount of actual time expended and the future expectations and discuss whether an adjustment is appropriate. 
+  You agree to pay Innocenti Jones a monthly flat fee of $[NBSP]${ Monthly.Flat.Fee }. Modification of monthly amount.   After the first ${ Initial.Term } months of this engagement, with reasonable notice, we or you may propose to modify this agreement.  We agree to review the amount of actual time expended and the future expectations and discuss whether an adjustment is appropriate. 
 
 % elif if fee_structure is 'hourly':
-Fees will be billed monthly and invoiced to client.  Invoices are due and payable  upon receipt. At least $[NBSP]${ Fixed.Deposit.Fee } of the fee must be received before we will render any services associated with this engagement.
+  Fees will be billed monthly and invoiced to client.  Invoices are due and payable  upon receipt. At least $[NBSP]${ Fixed.Deposit.Fee } of the fee must be received before we will render any services associated with this engagement.
 
 % else:
-Fees will be billed monthly and invoiced to client.  Invoices are due and payable  upon receipt.
+  Fees will be billed monthly and invoiced to client.  Invoices are due and payable  upon receipt.
 % endif 
 
 **Recording time.**
 % if fee_structure is 'flat_fee' or 'monthly_retainer':
-Our goal is to create an open, flexible relationship that allows you the freedom to consult us without being concerned about the expense associated with every call or email or issue you ask us to consider.  For that reason, we do not anticipate tracking the precise amount of time spent on each individual communication or consultation.  However, to facilitate future discussions about the reasonableness of the amounts incurred, we may track the amount of time spent on substantive projects requiring more than an hour of time.
+  Our goal is to create an open, flexible relationship that allows you the freedom to consult us without being concerned about the expense associated with every call or email or issue you ask us to consider.  For that reason, we do not anticipate tracking the precise amount of time spent on each individual communication or consultation.  However, to facilitate future discussions about the reasonableness of the amounts incurred, we may track the amount of time spent on substantive projects requiring more than an hour of time.
 
 % elif if fee_structure is 'hourly':
-You agree to pay at our prevailing rates, attached to this Engagement Letter as Schedule A and are incorporated as if fully set forth herein.
+  You agree to pay at our prevailing rates, attached to this Engagement Letter as Schedule A and are incorporated as if fully set forth herein.
 
 The rates on this schedule are subject to change on 30 days’ written notice to Client.  If Client declines to pay increased rates, Attorney will have the right to withdraw as attorney for Client.
 
