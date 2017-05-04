@@ -63,11 +63,10 @@ code: |
   multi_user = True
   if not user_logged_in():
     force_login = true
-  endif
   if user.attribute_defined('email') and user_has_privilege('advocate'):
     user = attorney
     role = 'attorney'
-    set_info(user=user, role=role
+    set_info(user=user, role=role)
   else:
     if client.attribute_defined('email') and client.email == user_info().email:
       user = client
@@ -75,8 +74,6 @@ code: |
       set_info(user=user, role=role)
     else:
       force_login = true
-    endif
-  endif
 ---
 mandatory: true
 event: force_login
