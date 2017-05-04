@@ -63,19 +63,6 @@ code: |
     EffectiveDate = time.strftime("%m/%d/%Y")
 ---
 role: organizer
-question: Please provide the client's initial information.
-subquestion: |
-   You may resume [the interview](${ interview_url() }) later.
-fields:
-  - First Name: client.name.first
-    default: ${ client.first_name_hint() }
-  - Last Name: client.name.last
-    default: ${ client.last_name_hint() }
-  - Title: client.title
-    default: Individual
-  - Email Address: client.email
----
-role: organizer
 question: Please provide the attorney's work email.
 subquestion: |
    You may resume [the interview](${ interview_url() }) later.
@@ -120,6 +107,19 @@ fields:
   - Initial (Minimum) Term: InitialTerm
   - Base Hourly/Overage Rate: HourlyOverageFee
     datatype: currency
+---
+role: organizer
+question: Please provide the client's initial information.
+subquestion: |
+   You may resume [the interview](${ interview_url() }) later.
+fields:
+  - First Name: client.name.first
+    default: ${ client.first_name_hint() }
+  - Last Name: client.name.last
+    default: ${ client.last_name_hint() }
+  - Title: client.title
+    default: Individual
+  - Email Address: client.email
 ---
 default role: organizer
 code: |
@@ -177,6 +177,12 @@ content: |
 
   Please go to [the interview](${ interview_url() })
   to resume the interview.
+---
+template: my_email
+subject: |
+  A document has been completed!
+content: |
+  Attached is the output from a GoodDocs interview.
 ---
 role: client
 question: |
