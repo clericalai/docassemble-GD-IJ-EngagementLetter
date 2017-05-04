@@ -68,17 +68,23 @@ code: |
     user = attorney
     role = 'attorney'
     set_info(user=user, role=role
-  elif client.attribute_defined('email') and client.email == user_info().email:
-    user = client
-    role = 'client'
-    set_info(user=user, role=role)
   else:
-    force_login = true
+    if client.attribute_defined('email') and client.email == user_info().email:
+      user = client
+      role = 'client'
+      set_info(user=user, role=role)
+    else:
+      force_login = true
+    endif
+  endif
 ---
 mandatory: true
 event: force_login
 question: |
   You must be logged in to proceed.
+buttons:
+  - Log in: signin
+  - Exit: exit
 ---
 role: attorney
 question: |
