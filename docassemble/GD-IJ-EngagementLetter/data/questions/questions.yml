@@ -181,11 +181,6 @@ attachment:
     filename: ${ client.name }-Engagement-Letter
     variable name: client.engagement_letter
     content file: TEMPLATE_Engagement_Letter_Individual.md
-  - name: Exhibit - Texas Lawyer's Creed
-    filename: Exhibit-TexasLawyersCreed
-    pdf template file: Texas_Lawyers_Creed.pdf
-    fields:
-      Exhibit: '1'
 ---
 code: |
   sent_ok = send_email(to=[attorney.email],
