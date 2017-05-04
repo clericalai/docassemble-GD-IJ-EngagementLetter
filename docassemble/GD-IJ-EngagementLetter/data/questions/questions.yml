@@ -163,7 +163,8 @@ role: organizer #client
 question: |
   Please sign your name below.
 subquestion: |
-  This will compile your engagment letter and apply your signature.
+  Your engagement letter is almost complete.  This matter will be engaged under a ${ fee_structure} structure at a rate of ${ FeeAmount }, with ${ DepositAmount } due immediately.
+  To agree, sign in the box below. This will compile your engagment letter and apply your signature to the engagment letter.
 signature: client.signature
 under: |
   ${ client.name }
