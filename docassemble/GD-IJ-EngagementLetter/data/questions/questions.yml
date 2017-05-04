@@ -58,7 +58,8 @@ code: |
     EffectiveDate = time.strftime("%m/%d/%Y")
 ---
 initial: true
-default role: organizer
+reconsider: true
+default role: attorney
 code: |
   multi_user = True
   if not user_logged_in():
@@ -68,11 +69,11 @@ code: |
     role = 'attorney'
     set_info(user=user, role=role)
   else:
-    if client.attribute_defined('email') and client.email == user_info().email:
+    if client.attribute_defined('email') and user_info().email == client.email:
       user = client
       role = 'client'
       set_info(user=user, role=role)
-    else:
+    else
       force_login
 ---
 mandatory: true
