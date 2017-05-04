@@ -40,7 +40,7 @@ You, **${ client.name }**, are our client. This letter confirms the terms on whi
 % if fee_structure is 'flat_fee' or 'retainer':
   Our goal is to create an open, flexible relationship that allows you the freedom to consult us without being concerned about the expense associated with every call or email or issue you ask us to consider.  For that reason, we do not anticipate tracking the precise amount of time spent on each individual communication or consultation.  However, to facilitate future discussions about the reasonableness of the amounts incurred, we may track the amount of time spent on substantive projects requiring more than an hour of time.
 
-% elif if fee_structure is 'hourly':
+% elif fee_structure is 'hourly':
   You agree to pay at our prevailing rates, attached to this Engagement Letter as Schedule A and are incorporated as if fully set forth herein.
 
   The rates on this schedule are subject to change on 30 days’ written notice to Client.  If Client declines to pay increased rates, Attorney will have the right to withdraw as attorney for Client.
