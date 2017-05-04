@@ -57,16 +57,18 @@ code: |
     import time
     EffectiveDate = time.strftime("%m/%d/%Y")
 ---
-mandatory: true
+initial: true
 default role: organizer
-reconsider: true
 code: |
   multi_user = True
-  if user_logged_in() and user.attribute_defined('email') and user_has_privilege('advocate'):
+  if not user_logged_in():
+    force_login = true
+  endif
+  if user.attribute_defined('email') and user_has_privilege('advocate'):
     user = attorney
     role = 'attorney'
     set_info(user=user, role=role
-  elif user_logged_in() and client.attribute_defined('email') and client.email == user_info().email:
+  elif client.attribute_defined('email') and client.email == user_info().email:
     user = client
     role = 'client'
     set_info(user=user, role=role)
