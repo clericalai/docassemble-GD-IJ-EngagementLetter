@@ -133,7 +133,7 @@ subquestion: |
   Please remember the following link and come back to it when you
   receive notice to do so:
 
-  [${ interview_url() }](${ interview_url() })
+  [the interview](${ interview_url() })
   % else:
   Thanks, the client needs to resume the interview now.
   % endif
@@ -160,7 +160,7 @@ subject: |
 content: |
   An attorney has finished reviewing your answers.
 
-  Please go to [${ interview_url() }](${ interview_url() })
+  Please go to [the interview](${ interview_url() })
   to resume the interview.
 ---
 role: organizer #client
@@ -174,7 +174,7 @@ under: |
   ${ client.name }
 ---
 mandatory: true
-role: attorney
+role: organizer #attorney
 question: Document assembly complete.
 attachment:
   - name: ${ client.name } Engagement Letter
