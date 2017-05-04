@@ -62,15 +62,11 @@ default role: organizer
 reconsider: true
 code: |
   multi_user = True
-  if user_logged_in() and \
-      user.attribute_defined('email') and \
-      user_has_privilege('advocate'):
+  if user_logged_in() and user.attribute_defined('email') and user_has_privilege('advocate'):
     user = attorney
     role = 'attorney'
     set_info(user=user, role=role
-  elif user_logged_in() and \
-      client.attribute_defined('email') and \
-      client.email == user_info().email:
+  elif user_logged_in() and client.attribute_defined('email') and client.email == user_info().email:
     user = client
     role = 'client'
     set_info(user=user, role=role)
