@@ -40,7 +40,7 @@ fields:
 code: |
   name_suffix()
 ---
-role: client
+role: organizer #client
 question: |
   What is ${ client.object_possessive('address') }?
 fields:
