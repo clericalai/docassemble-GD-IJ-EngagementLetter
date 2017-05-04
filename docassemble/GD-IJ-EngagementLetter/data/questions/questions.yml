@@ -50,6 +50,10 @@ code: |
   case.court = court
   pleading.case = case
 ---
+code: |
+    import time
+    EffectiveDate = time.strftime("%m/%d/%Y")
+---
 default role: organizer
 code: |
   multi_user = True
@@ -85,9 +89,23 @@ decoration: exit
 buttons:
   - Exit: leave
 ---
-code: |
-  import time
-  EffectiveDate = time.strftime("%m/%d/%Y")
+template: role_event_email_to_attorney
+subject: |
+  Client interview waiting for your attention: ${ client }
+content: |
+  A client, ${ client }, has partly finished an interview.
+
+  Please go to [the interview](${ interview_url() }) as soon as
+  possible to review the client's answers.
+---
+template: role_event_email_to_client
+subject: |
+  Your interview answers have been reviewed
+content: |
+  An attorney has finished reviewing your answers.
+
+  Please go to [${ interview_url() }](${ interview_url() })
+  to resume the interview.
 ---
 role: attorney
 question: Please provide the client's initial email.
