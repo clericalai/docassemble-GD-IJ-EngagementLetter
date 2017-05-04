@@ -31,7 +31,8 @@ code: |
 mandatory: true
 event: force_login
 question: |
-  You must be logged in to proceed.
+  "You must be logged in to proceed.
+  <small>GDError:user not found.</small>"
 buttons:
   - Log in: signin
   - Exit: exit
