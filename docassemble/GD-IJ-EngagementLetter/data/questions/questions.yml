@@ -82,6 +82,8 @@ fields:
     default: ${ attorney.first_name_hint() }
   - Last Name: attorney.name.last
     default: ${ attorney.last_name_hint() }
+  - Title: attorney.title
+    default: Attorney at Law
   - Email Address: attorney.email
 ---
 role: organizer #attorney
