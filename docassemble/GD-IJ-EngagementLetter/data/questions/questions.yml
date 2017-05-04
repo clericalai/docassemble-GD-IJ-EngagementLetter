@@ -40,7 +40,7 @@ fields:
 code: |
   name_suffix()
 ---
-role: organizer #client
+role: client
 question: |
   What is ${ client.object_possessive('address') }?
 fields:
@@ -88,7 +88,7 @@ fields:
     default: Attorney at Law
   - Email Address: attorney.email
 ---
-role: organizer #attorney
+role: attorney
 question: |
   Under what fee structure will the client be billed?
 field: fee_structure
@@ -97,7 +97,7 @@ buttons:
   - Flat Fee: flat_fee
   - Monthly Retainer: retainer
 ---
-role: organizer #attorney
+role: attorney
 question: |
   What are the services covered by this ${ fee_structure } engagment?
 fields:
@@ -109,7 +109,7 @@ fields:
   - "Describe any Other services": services_description
     datatype: area
 ---
-role: organizer #attorney
+role: attorney
 question: |
   What are the fee rates for this ${ fee_structure } engagment?
 fields:
@@ -178,7 +178,7 @@ content: |
   Please go to [the interview](${ interview_url() })
   to resume the interview.
 ---
-role: organizer #client
+role: client
 question: |
   Please sign your name below.
 subquestion: |
@@ -189,7 +189,9 @@ under: |
   ${ client.name }
 ---
 mandatory: true
-role: organizer #attorney
+role:
+  - attorney
+  - client
 question: Document assembly complete.
 attachment:
   - name: ${ client.name } Engagement Letter
