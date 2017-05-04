@@ -73,7 +73,7 @@ code: |
       user = client
       role = 'client'
       set_info(user=user, role=role)
-    else
+    else:
       force_login
 ---
 mandatory: true
