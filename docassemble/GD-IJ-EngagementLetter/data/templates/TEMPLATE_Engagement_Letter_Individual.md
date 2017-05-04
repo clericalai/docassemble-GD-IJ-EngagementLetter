@@ -74,7 +74,7 @@ Dated: ${ EffectiveDate }
 
 | for **Innocenti Jones PLLC**                     | for **Client** |
 |---------------------------------|-------------|
-| /s/ ${ attorney.name }  | By: ${ client.signature } |
-| Name:  ${ attorney.name } | Name: ${ client.name } |
-| ${ attorney.title }      | Its: ${ client.title } |
+| /s/ ${ advocate.name }  | By: ${ client.signature } |
+| Name:  ${ advocate.name } | Name: ${ client.name } |
+| ${ advocate.title }      | Its: ${ client.title } |
 | _Address:_  110 E Houston St,  Eighth Floor, Box 120,  San Antonio, Texas 78205      | _Address:_  ${ client.address_block() } |

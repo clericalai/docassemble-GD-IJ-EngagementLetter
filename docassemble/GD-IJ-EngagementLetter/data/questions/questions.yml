@@ -12,9 +12,8 @@ metadata:
   revision_date: 2017-05-04
   debug: True
 ---
-modules:
-  - docassemble.base.util
-  - docassemble.base.legal
+include:
+  - basic-questions.yml
 ---
 objects:
   - client: Individual
@@ -28,10 +27,6 @@ code: |
   multi_user = True
   if not user_logged_in():
     force_login
-  if user.attribute_defined('email') and user_has_privilege('advocate'):
-    user = attorney
-    role = 'attorney'
-    set_info(user=user, role=role)
 ---
 mandatory: true
 event: force_login
@@ -58,7 +53,7 @@ code: |
     import time
     EffectiveDate = time.strftime("%m/%d/%Y")
 ---
-role: attorney
+role: advocate
 question: |
   This begins the Engagement Letter Process.
   Please provide the attorney's work email.
@@ -66,13 +61,13 @@ question: |
 subquestion: |
    Please make a note of the interview link.  You may resume [the interview](${ interview_url() }) later.
 fields:
-  - Attorney First Name: attorney.name.first
-    default: ${ attorney.first_name_hint() }
-  - Attorney Last Name: attorney.name.last
-    default: ${ attorney.last_name_hint() }
-  - Attorney Title: attorney.title
+  - Attorney First Name: advocate.name.first
+    default: ${ advocate.first_name_hint() }
+  - Attorney Last Name: advocate.name.last
+    default: ${ advocate.last_name_hint() }
+  - Attorney Title: advocate.title
     default: Attorney at Law
-  - Attorney Email Address: attorney.email
+  - Attorney Email Address: advocate.email
   - Client First Name: client.name.first
     default: ${ client.first_name_hint() }
   - Client Last Name: client.name.last
@@ -81,7 +76,7 @@ fields:
     default: Individual
   - Client Email Address: client.email
 ---
-role: attorney
+role: advocate
 question: |
   Under what fee structure will the client be billed?
 field: fee_structure
@@ -90,7 +85,7 @@ buttons:
   - Flat Fee: flat_fee
   - Monthly Retainer: retainer
 ---
-role: attorney
+role: advocate
 question: |
   What are the services covered by this ${ fee_structure } engagment?
 fields:
@@ -102,7 +97,7 @@ fields:
   - "Describe any Other services": services_description
     datatype: area
 ---
-role: attorney
+role: advocate
 question: |
   What are the fee rates for this ${ fee_structure } engagment?
 fields:
@@ -117,7 +112,7 @@ fields:
 event: role_event
 question: You are done for now.
 subquestion: |
-  % if 'attorney' in role_needed:
+  % if 'advocate' in role_needed:
   An attorney needs to review your answers before you can proceed.
 
   Please remember the following link and come back to it when you
@@ -128,14 +123,14 @@ subquestion: |
   Thanks, the client needs to resume [the interview](${ interview_url() }) now.
   % endif
 
-  % if role_change.send_email(role_needed, attorney={'to': attorney, 'email': role_event_email_to_attorney}, client={'to': client, 'email': role_event_email_to_client}):
+  % if role_change.send_email(role_needed, advocate={'to': advocate, 'email': role_event_email_to_advocate}, client={'to': client, 'email': role_event_email_to_client}):
   An e-mail has been sent.
   % endif
 decoration: exit
 buttons:
   - Exit: leave
 ---
-template: role_event_email_to_attorney
+template: role_event_email_to_advocate
 subject: |
   Client interview waiting for your attention: ${ client }
 content: |
@@ -171,7 +166,7 @@ under: |
 ---
 mandatory: true
 role:
-  - attorney
+  - advocate
   - client
 question: Document assembly complete.
 attachment:
@@ -181,7 +176,7 @@ attachment:
     content file: TEMPLATE_Engagement_Letter_Individual.md
 ---
 code: |
-  sent_ok = send_email(to=[attorney.email],
+  sent_ok = send_email(to=[advocate.email],
                        template=my_email,
                        attachments=[client.engagement_letter])
 ---
