@@ -75,7 +75,6 @@ code: |
     role = 'client'
     ready = true
   else:
-    user = anyonymous
     role = 'anonymous'
     force_login = true
   set_info(user=user, role=role)
