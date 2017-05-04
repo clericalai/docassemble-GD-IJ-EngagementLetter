@@ -169,4 +169,6 @@ attachment:
   - name: Exhibit - Texas Lawyer's Creed
     filename: Exhibit-TexasLawyersCreed
     pdf template file: Texas_Lawyers_Creed.pdf
+    fields:
+      Exhibit: '1'
 ---
