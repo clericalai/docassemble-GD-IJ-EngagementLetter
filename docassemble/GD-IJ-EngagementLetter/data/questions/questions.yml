@@ -91,7 +91,7 @@ code: |
       attorney.email == user_info().email:
     user = attorney
     role = 'attorney'
-  elsif user_logged_in() and \
+  elif user_logged_in() and \
       client.attribute_defined('email') and \
       client.email == user_info().email:
     user = client
