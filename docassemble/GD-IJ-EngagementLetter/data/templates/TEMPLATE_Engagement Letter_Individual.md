@@ -9,9 +9,9 @@ Via Electronic Mail to: _${ client.email }_
 
 *Re: Letter of Engagement*
 
-Dear ${ client.salutation } ${ client.lastname }:  
+Dear ${ client.salutation } ${ client.name.last }:  
 
-You, **${ client.FirstName } ${ client.FirstName }**, are our client. This letter confirms the terms on which we will represent You. If the matter for which we are being engaged involves an entity, a separate Engagement will be required to represent the entity. Our representation of an entity does not mean that we represent any managers, officers, directors, managers, employees, or shareholders in their individual capacities. 
+You, **${ client.name }**, are our client. This letter confirms the terms on which we will represent You. If the matter for which we are being engaged involves an entity, a separate Engagement will be required to represent the entity. Our representation of an entity does not mean that we represent any managers, officers, directors, managers, employees, or shareholders in their individual capacities. 
    
 **Scope of Services Covered.**   We will receive a flat fee in exchange for full access to our time, advice, and consultation regarding routine day-to-day legal issues and matters that you may encounter. We refer to these as “general counsel services.” These may include business, corporate, employment, and human resources issues, basic contract or document review and advice, problem solving, pre-litigation negotiation and dispute resolution, and the like.  Whether a matter or issue falls outside the scope of this agreement will be handled with common sense, mutual respect, and fairness to both parties.
 
@@ -20,17 +20,17 @@ You, **${ client.FirstName } ${ client.FirstName }**, are our client. This lette
 **Attorneys' Fees.**
 
 ## % if fee_structure is 'flat_fee':
-  You agree to pay Innocenti Jones a flat fee of $[NBSP]${ MonthlyFlatFee }. At least ${ PctgDepositFee } percent of the fee must be received before we will render any services associated with this engagement.
-## % elif if fee_structure is 'monthly_retainer':
-  You agree to pay Innocenti Jones a monthly flat fee of $[NBSP]${ MonthlyFlatFee }. Modification of monthly amount.   After the first ${ InitialTerm } months of this engagement, with reasonable notice, we or you may propose to modify this agreement.  We agree to review the amount of actual time expended and the future expectations and discuss whether an adjustment is appropriate. 
+  You agree to pay Innocenti Jones a flat fee of $[NBSP]${ FeeAmount }. At least ${ PctgDepositFee } percent of the fee must be received before we will render any services associated with this engagement.
+## % elif if fee_structure is 'retainer':
+  You agree to pay Innocenti Jones a monthly flat fee of $[NBSP]${ FeeAmount }. Modification of monthly amount.   After the first ${ InitialTerm } months of this engagement, with reasonable notice, we or you may propose to modify this agreement.  We agree to review the amount of actual time expended and the future expectations and discuss whether an adjustment is appropriate. 
 ## % elif if fee_structure is 'hourly':
-  Fees will be billed monthly and invoiced to client.  Invoices are due and payable  upon receipt. At least $[NBSP]${ FixedDepositFee } of the fee must be received before we will render any services associated with this engagement.
+  Fees will be billed monthly and invoiced to client.  Invoices are due and payable  upon receipt. At least $[NBSP]${ DepositAmount } of the fee must be received before we will render any services associated with this engagement.
 ## % else:
   Fees will be billed monthly and invoiced to client.  Invoices are due and payable  upon receipt.
 ## % endif 
 
 **Recording time.**
-## % if fee_structure is 'flat_fee' or 'monthly_retainer':
+## % if fee_structure is 'flat_fee' or 'retainer':
   Our goal is to create an open, flexible relationship that allows you the freedom to consult us without being concerned about the expense associated with every call or email or issue you ask us to consider.  For that reason, we do not anticipate tracking the precise amount of time spent on each individual communication or consultation.  However, to facilitate future discussions about the reasonableness of the amounts incurred, we may track the amount of time spent on substantive projects requiring more than an hour of time.
 
 ## % elif if fee_structure is 'hourly':

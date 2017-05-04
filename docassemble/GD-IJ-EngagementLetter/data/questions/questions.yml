@@ -84,6 +84,24 @@ fields:
     default: ${ attorney.last_name_hint() }
   - Email Address: attorney.email
 ---
+role: organizer #attorney
+question: |
+  Under what fee structure will the client be billed?
+field: fee_structure
+buttons:
+  - Hourly: hourly
+  - Flat Fee: flat_fee
+  - Monthly Retainer: retainer
+---
+role: organizer #attorney
+question: |
+  What are the fee rates for this ${ fee_structure } engagment?
+fields:
+  - {$ fee_structure } Fee Amount: FeeAmount
+  - Deposit Amount: DepositAmount
+  - Initial (Minimum) Term: InitialTerm
+  - Base Hourly/Overage Rate: HourlyOverageFee
+---
 default role: organizer
 code: |
   multi_user = True
