@@ -62,7 +62,6 @@ code: |
     EffectiveDate = time.strftime("%m/%d/%Y")
 ---
 role: organizer
-default role: organizer
 question: Please provide the client's initial email.
 subquestion: |
    You may resume [the interview](${ interview_url() }) later.
@@ -84,6 +83,7 @@ fields:
     default: ${ attorney.last_name_hint() }
   - Email Address: attorney.email
 ---
+default role: organizer
 code: |
   multi_user = True
   if user_logged_in() and \
