@@ -179,6 +179,7 @@ question: Document assembly complete.
 attachment:
   - name: ${ client.name } Engagement Letter
     filename: ${ client.name }-Engagement-Letter
+    variable name: client.engagement_letter
     content file: TEMPLATE_Engagement_Letter_Individual.md
   - name: Exhibit - Texas Lawyer's Creed
     filename: Exhibit-TexasLawyersCreed
@@ -186,3 +187,7 @@ attachment:
     fields:
       Exhibit: '1'
 ---
+code: |
+  sent_ok = send_email(to=[attorney.email],
+                       template=my_email,
+                       attachments=[client.engagement_letter])

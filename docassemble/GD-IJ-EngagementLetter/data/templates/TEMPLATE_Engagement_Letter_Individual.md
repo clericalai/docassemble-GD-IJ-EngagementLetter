@@ -70,12 +70,3 @@ Dated: ${ EffectiveDate }
 | Name:  ${ attorney.name } | Name: ${ client.name } |
 | ${ attorney.title }      | Its: ${ client.title } |
 | _Address:_  110 E Houston St,  Eighth Floor, Box 120,  San Antonio, Texas 78205      | _Address:_  ${ client.address_block() } |
-
-<!-- Enclosures: ${ Attachments } -->
-
-<!-- Questions must include this block
-content file:
-  - TEMPLATE_Engagement Letter_Outside General Counsel.md
-  - Texas_Lawyers_Creed.pdf
-  - Rate_Sheet.md
--->
