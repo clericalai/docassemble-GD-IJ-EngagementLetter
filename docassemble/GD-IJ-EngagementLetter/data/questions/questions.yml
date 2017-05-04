@@ -9,7 +9,7 @@ metadata:
   authors:
     - name: Nathan Roach
     - organization: GoodDocs.io
-  revision_date: 2017-04-28
+  revision_date: 2017-05-03
   debug: True
 ---
 modules:
@@ -38,33 +38,19 @@ fields:
     required: False
 code: |
   name_suffix()
-# comment: |
-#   If the object does not have a name yet, generic questions can refer
-#   to it by the name of the variable itself.  For example, suppose you
-#   create an object, case.judge, with the class of Individual.  If the
-#   name of case.judge is ever needed, docassemble will use the question
-#   above to ask "What is the name of the judge in the case?"
 ---
-generic object: Individual
+role: client
 question: |
-  What is ${ x.object_possessive('address') }?
+  What is ${ client.object_possessive('address') }?
 fields:
-  - address: x.address.address
-  - unit: x.address.unit
+  - address: client.address.address
+  - unit: client.address.unit
     required: False
-  - city: x.address.city
-  - state: x.address.city
-  - zip: x.address.zip
-  - country: x.address.country
+  - city: client.address.city
+  - state: client.address.city
+  - zip: client.address.zip
+  - country: client.address.country
     default: 'US'
-code: |
-  address_block()
-# comment: |
-#   If the object does not have a name yet, generic questions can refer
-#   to it by the name of the variable itself.  For example, suppose you
-#   create an object, case.judge, with the class of Individual.  If the
-#   name of case.judge is ever needed, docassemble will use the question
-#   above to ask "What is the name of the judge in the case?"
 ---
 mandatory: true
 code: |
