@@ -9,7 +9,7 @@ metadata:
   authors:
     - name: Nathan Roach
     - organization: GoodDocs.io
-  revision_date: 2017-05-03
+  revision_date: 2017-05-04
   debug: True
 ---
 modules:
@@ -17,45 +17,9 @@ modules:
   - docassemble.base.legal
 ---
 objects:
-  - case: Case
-  - organizer: Individual
   - client: Individual
   - attorney: Individual
-  - pleading: LegalFiling
-  - court: Court
   - role_change: RoleChangeTracker # important
----
-generic object: Individual
-question: |
-  What is ${ x.object_possessive('name') }?
-fields:
-  - First Name: x.name.first
-    default: ${ x.first_name_hint() }
-  - Middle Name: x.name.middle
-    required: False
-  - Last Name: x.name.last
-    default: ${ x.last_name_hint() }
-  - Suffix: x.name.suffix
-    required: False
-code: |
-  name_suffix()
----
-role: client
-question: |
-  What is ${ client.object_possessive('address') }?
-fields:
-  - address: client.address.address
-  - unit: client.address.unit
-    required: False
-  - city: client.address.city
-  - state: client.address.state
-  - zip: client.address.zip
-  - country: client.address.country
-    default: 'US'
----
-code: |
-    import time
-    EffectiveDate = time.strftime("%m/%d/%Y")
 ---
 initial: true
 reconsider: true
@@ -76,6 +40,23 @@ question: |
 buttons:
   - Log in: signin
   - Exit: exit
+---
+role: client
+question: |
+  What is ${ client.object_possessive('address') }?
+fields:
+  - address: client.address.address
+  - unit: client.address.unit
+    required: False
+  - city: client.address.city
+  - state: client.address.state
+  - zip: client.address.zip
+  - country: client.address.country
+    default: 'US'
+---
+code: |
+    import time
+    EffectiveDate = time.strftime("%m/%d/%Y")
 ---
 role: attorney
 question: |
@@ -203,3 +184,4 @@ code: |
   sent_ok = send_email(to=[attorney.email],
                        template=my_email,
                        attachments=[client.engagement_letter])
+---
