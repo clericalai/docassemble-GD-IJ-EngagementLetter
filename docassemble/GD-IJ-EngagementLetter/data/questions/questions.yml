@@ -72,7 +72,7 @@ fields:
   - Last Name: client.name.last
     default: ${ client.last_name_hint() }
   - Title: client.title
-      default: Individual
+      default: 'Individual'
   - Email Address: client.email
 ---
 role: organizer
