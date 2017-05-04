@@ -153,7 +153,7 @@ subquestion: |
   Thanks, the client needs to resume [the interview](${ interview_url() }) now.
   % endif
 
-  % if role_change.send_email(role_needed, attorney={'to': attorney.email, 'email': role_event_email_to_attorney}, client={'to': client.email, 'email': role_event_email_to_client}):
+  % if role_change.send_email(role_needed, attorney={'to': attorney, 'email': role_event_email_to_attorney}, client={'to': client, 'email': role_event_email_to_client}):
   An e-mail has been sent.
   % endif
 decoration: exit
