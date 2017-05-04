@@ -47,7 +47,7 @@ fields:
   - unit: client.address.unit
     required: False
   - city: client.address.city
-  - state: client.address.city
+  - state: client.address.state
   - zip: client.address.zip
   - country: client.address.country
     default: 'US'
