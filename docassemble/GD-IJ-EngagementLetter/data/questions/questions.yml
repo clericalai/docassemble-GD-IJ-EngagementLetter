@@ -53,27 +53,32 @@ fields:
   - country: client.address.country
     default: 'US'
 ---
-mandatory: true
-code: |
-  case.court = court
-  pleading.case = case
----
 code: |
     import time
     EffectiveDate = time.strftime("%m/%d/%Y")
 ---
 role: organizer
-question: Please provide the attorney's work email.
+question: |
+  This begins the Engagement Letter Process.
+  Please provide the attorney's work email.
+  Then, provide the client's contact information.
 subquestion: |
-   You may resume [the interview](${ interview_url() }) later.
+   Please make a note of the interview link.  You may resume [the interview](${ interview_url() }) later.
 fields:
-  - First Name: attorney.name.first
+  - "<h3>Attorney</h3> Attorney First Name": attorney.name.first
     default: ${ attorney.first_name_hint() }
-  - Last Name: attorney.name.last
+  - Attorney Last Name: attorney.name.last
     default: ${ attorney.last_name_hint() }
-  - Title: attorney.title
+  - Attorney Title: attorney.title
     default: Attorney at Law
-  - Email Address: attorney.email
+  - Attorney Email Address: attorney.email
+  - "<h3>Client</h3> Client First Name": client.name.first
+    default: ${ client.first_name_hint() }
+  - Client Last Name: client.name.last
+    default: ${ client.last_name_hint() }
+  - Client Title: client.title
+    default: Individual
+  - Client Email Address: client.email
 ---
 role: attorney
 question: |
@@ -107,19 +112,6 @@ fields:
   - Initial (Minimum) Term: InitialTerm
   - Base Hourly/Overage Rate: HourlyOverageFee
     datatype: currency
----
-role: organizer
-question: Please provide the client's initial information.
-subquestion: |
-   You may resume [the interview](${ interview_url() }) later.
-fields:
-  - First Name: client.name.first
-    default: ${ client.first_name_hint() }
-  - Last Name: client.name.last
-    default: ${ client.last_name_hint() }
-  - Title: client.title
-    default: Individual
-  - Email Address: client.email
 ---
 default role: organizer
 code: |

@@ -2,8 +2,6 @@
 
 _${ Effective.Date }_
 
-
-
 Via Electronic Mail to: _${ Matter.Client.Email }_
 
 > ${ Matter.Client.Name }

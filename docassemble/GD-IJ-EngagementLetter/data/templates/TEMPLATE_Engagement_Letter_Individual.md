@@ -12,6 +12,7 @@ Via Electronic Mail to: _${ client.email }_
 Dear ${ client.salutation } ${ client.name.last }:  
 
 You, **${ client.name }**, are our client. This letter confirms the terms on which we will represent You. If the matter for which we are being engaged involves an entity, a separate Engagement will be required to represent the entity. Our representation of an entity does not mean that we represent any managers, officers, directors, managers, employees, or shareholders in their individual capacities. 
+
    
 **Scope of Services Covered.**  
 % if services is 'gc':
