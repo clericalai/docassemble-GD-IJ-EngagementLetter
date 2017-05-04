@@ -86,15 +86,18 @@ fields:
 ---
 code: |
   multi_user = True
-  role = 'organizer'
   if user_logged_in() and \
       attorney.attribute_defined('email') and \
       attorney.email == user_info().email:
     user = attorney
     role = 'attorney'
-  else:
+  elsif user_logged_in() and \
+      client.attribute_defined('email') and \
+      client.email == user_info().email:
     user = client
     role = 'client'
+  else:
+    role = 'organizer'
   set_info(user=user, role=role)
 ---
 event: role_event
@@ -138,7 +141,7 @@ content: |
 ---
 mandatory: true
 role: attorney
-question: Thanks for engaging our firm.  We will be in contact regarding next steps.
+question: Document assembly complete.
 attachment:
   - name: ${ client.name } Engagement Letter
     filename: ${ client.name }-Engagement-Letter
