@@ -58,6 +58,29 @@ code: |
     EffectiveDate = time.strftime("%m/%d/%Y")
 ---
 mandatory: true
+default role: organizer
+reconsider: true
+code: |
+  multi_user = True
+  if user_logged_in() and \
+      attorney.attribute_defined('email') and \
+      user_has_privilege('advocate'):
+    user = attorney
+    role = 'attorney'
+    ready = true
+  elif user_logged_in() and \
+      client.attribute_defined('email') and \
+      client.email == user_info().email:
+    user = client
+    role = 'client'
+    ready = true
+  else:
+    user = anyonymous
+    role = 'anonymous'
+    force_login = true
+  set_info(user=user, role=role)
+---
+mandatory: true
 event: force_login
 question: |
   You must be logged in to proceed.
@@ -117,27 +140,6 @@ fields:
   - Initial (Minimum) Term: InitialTerm
   - Base Hourly/Overage Rate: HourlyOverageFee
     datatype: currency
----
-default role: organizer
-code: |
-  multi_user = True
-  if user_logged_in() and \
-      attorney.attribute_defined('email') and \
-      user_has_privilege('advocate'):
-    user = attorney
-    role = 'attorney'
-    ready = true
-  elif user_logged_in() and \
-      client.attribute_defined('email') and \
-      client.email == user_info().email:
-    user = client
-    role = 'client'
-    ready = true
-  else:
-    user = anyonymous
-    role = 'anonymous'
-    force_login = true
-  set_info(user=user, role=role)
 ---
 event: role_event
 question: You are done for now.
