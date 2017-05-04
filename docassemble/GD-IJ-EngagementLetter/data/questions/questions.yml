@@ -65,8 +65,7 @@ question: |
 subquestion: |
    Please make a note of the interview link.  You may resume [the interview](${ interview_url() }) later.
 fields:
-  - "<div><h3>Attorney</h3></div>": 
-  - Attorney First Name: attorney.name.first
+  - "<div style='clear: both;'><h3>Attorney</h3></div> Attorney First Name": attorney.name.first
     default: ${ attorney.first_name_hint() }
   - Attorney Last Name: attorney.name.last
     default: ${ attorney.last_name_hint() }
