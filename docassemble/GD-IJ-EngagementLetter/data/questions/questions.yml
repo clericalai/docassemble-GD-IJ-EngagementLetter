@@ -165,5 +165,7 @@ question: Document assembly complete.
 attachment:
   - name: ${ client.name } Engagement Letter
     filename: ${ client.name }-Engagement-Letter
-    content file: TEMPLATE_Engagement Letter_Individual.md
+    content file: |
+     - TEMPLATE_Engagement Letter_Individual.md
+     - Texas_Lawyers_Creed.pdf
 ---
