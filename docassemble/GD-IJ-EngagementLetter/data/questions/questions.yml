@@ -54,7 +54,29 @@ code: |
     import time
     EffectiveDate = time.strftime("%m/%d/%Y")
 ---
+role: organizer
 default role: organizer
+question: Please provide the client's initial email.
+subquestion: |
+   You may resume [the interview](${ interview_url() }) later.
+fields:
+  - First Name: client.name.first
+    default: ${ client.first_name_hint() }
+  - Last Name: client.name.last
+    default: ${ client.last_name_hint() }
+  - Email Address: client.email
+---
+role: organizer
+question: Please provide the attorney's work email.
+subquestion: |
+   You may resume [the interview](${ interview_url() }) later.
+fields:
+  - First Name: attorney.name.first
+    default: ${ attorney.first_name_hint() }
+  - Last Name: attorney.name.last
+    default: ${ attorney.last_name_hint() }
+  - Email Address: attorney.email
+---
 code: |
   multi_user = True
   role = 'organizer'
@@ -106,17 +128,6 @@ content: |
 
   Please go to [${ interview_url() }](${ interview_url() })
   to resume the interview.
----
-role: attorney
-question: Please provide the client's initial email.
-subquestion: |
-   You may resume [the interview](${ interview_url() }) later.
-fields:
-  - First Name: client.name.first
-    default: ${ client.first_name_hint() }
-  - Last Name: client.name.last
-    default: ${ client.last_name_hint() }
-  - Email Address: client.email
 ---
 mandatory: true
 role: attorney
