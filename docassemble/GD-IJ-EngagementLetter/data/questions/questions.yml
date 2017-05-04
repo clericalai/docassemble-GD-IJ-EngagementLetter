@@ -97,7 +97,7 @@ role: organizer #attorney
 question: |
   What are the fee rates for this ${ fee_structure } engagment?
 fields:
-  - Fee Amount: FeeAmount
+  - Fee Amount': FeeAmount
   - Deposit Amount: DepositAmount
   - Initial (Minimum) Term: InitialTerm
   - Base Hourly/Overage Rate: HourlyOverageFee
@@ -165,7 +165,8 @@ question: Document assembly complete.
 attachment:
   - name: ${ client.name } Engagement Letter
     filename: ${ client.name }-Engagement-Letter
-    content file: |
-     - TEMPLATE_Engagement Letter_Individual.md
-     - Texas_Lawyers_Creed.pdf
+    content file: TEMPLATE_Engagement_Letter_Individual.md
+  - name: Exhibit - Texas Lawyer's Creed
+    filename: Exhibit-TexasLawyersCreed
+    content file: Texas_Lawyers_Creed.pdf
 ---
