@@ -67,6 +67,11 @@ code: |
   import time
   EffectiveDate = time.strftime("%m/%d/%Y")
 ---
+role: attorney
+question: What is the client's email address?
+fields:
+  - Email Address: client_email
+---
 role: client
 code: |
   client_email = client.email_address()
