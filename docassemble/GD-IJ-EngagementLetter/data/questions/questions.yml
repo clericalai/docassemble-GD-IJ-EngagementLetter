@@ -52,39 +52,23 @@ code: |
 #   name of case.judge is ever needed, docassemble will use the question
 #   above to ask "What is the name of the judge in the case?"
 ---
-#generic object: Individual
-#question: |
-#  What is ${ x.object_possessive('email') }?
-#fields:
-#  - email: x.email
-#    default: ${ x.email_address() }
-#    datatype: email
-#    required: False
-#code: |
-#  email()
-#---
 code: |
   import time
   EffectiveDate = time.strftime("%m/%d/%Y")
 ---
 role: attorney
-question: What is the client's email address?
+question: Please provide the client's initial email.
 subquestion: |
    You may resume [the interview](${ interview_url() }) later.
 fields:
-  - Email Address: client_email
----
-role: client
-code: |
-#  client_email = client.email_address()
-  client_salutation = client.salutation
-  client_name = client.name
-  client_address = client.address_block()
-# this block is intended to populate all the variables in the template with object properties prior to assembly
-# it may be necessary to uncouple this from a role declaration if order of operations fails to prioritize this correctly
+  - First Name: client.name.first
+    default: ${ x.first_name_hint() }
+  - Last Name: client.name.last
+    default: ${ x.last_name_hint() }
+  - Email Address: client.email
 ---
 mandatory: true
-role: client
+role: attorney
 question: Thanks for engaging our firm.  We will be in contact regarding next steps.
 attachment:
   - name: ${ client_name } Engagement Letter
