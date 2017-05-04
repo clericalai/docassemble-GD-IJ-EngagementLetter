@@ -166,7 +166,7 @@ attachment:
   - name: ${ client.name } Engagement Letter
     filename: ${ client.name }-Engagement-Letter
     content file: TEMPLATE_Engagement_Letter_Individual.md
-  - name: Exhibit - Texas Lawyer's Creed
-    filename: Exhibit-TexasLawyersCreed
-    content file: Texas_Lawyers_Creed.pdf
+#  - name: Exhibit - Texas Lawyer's Creed
+#    filename: Exhibit-TexasLawyersCreed
+#    content file: Texas_Lawyers_Creed.pdf
 ---
