@@ -21,18 +21,21 @@ objects:
   - role_change: RoleChangeTracker # important
 ---
 initial: true
-reconsider: true
 default role: client
 code: |
-#  multi_user = True
-  if not user.user_logged_in():
+  multi_user = True
+---
+initial: true
+reconsider: true
+code: |
+  if not user_logged_in():
     force_login
 ---
 mandatory: true
 event: force_login
 question: |
-  "You must be logged in to proceed.
-  <small>GDError:user not found.</small>"
+  You must be logged in to proceed.
+  <br><small>GDError:user not found.</small>
 buttons:
   - Log in: signin
   - Exit: exit
