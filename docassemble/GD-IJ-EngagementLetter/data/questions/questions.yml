@@ -159,6 +159,15 @@ content: |
   Please go to [${ interview_url() }](${ interview_url() })
   to resume the interview.
 ---
+role: organizer #client
+question: |
+  Please sign your name below.
+subquestion: |
+  This will compile your engagment letter and apply your signature.
+signature: client.signature
+under: |
+  ${ client.name }
+---
 mandatory: true
 role: attorney
 question: Document assembly complete.
