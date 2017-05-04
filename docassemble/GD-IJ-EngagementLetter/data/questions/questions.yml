@@ -67,16 +67,15 @@ code: |
       user_has_privilege('advocate'):
     user = attorney
     role = 'attorney'
-    ready = true
+    set_info(user=user, role=role
   elif user_logged_in() and \
       client.attribute_defined('email') and \
       client.email == user_info().email:
     user = client
     role = 'client'
-    ready = true
+    set_info(user=user, role=role)
   else:
     force_login = true
-  set_info(user=user, role=role)
 ---
 mandatory: true
 event: force_login
