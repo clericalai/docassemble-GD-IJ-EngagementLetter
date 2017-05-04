@@ -63,7 +63,7 @@ code: |
     EffectiveDate = time.strftime("%m/%d/%Y")
 ---
 role: organizer
-question: Please provide the client's initial email.
+question: Please provide the client's initial information.
 subquestion: |
    You may resume [the interview](${ interview_url() }) later.
 fields:
@@ -99,12 +99,26 @@ buttons:
 ---
 role: organizer #attorney
 question: |
+  What are the services covered by this ${ fee_structure } engagment?
+fields:
+  - Services: services
+    datatype: checkboxes
+    choices:
+      - General Counsel: gc
+      - Other: other
+  - "Describe any Other services": services_description
+---
+role: organizer #attorney
+question: |
   What are the fee rates for this ${ fee_structure } engagment?
 fields:
-  - Fee Amount': FeeAmount
+  - Fee Amount: FeeAmount
+    datatype: currency
   - Deposit Amount: DepositAmount
+    datatype: currency
   - Initial (Minimum) Term: InitialTerm
   - Base Hourly/Overage Rate: HourlyOverageFee
+    datatype: currency
 ---
 default role: organizer
 code: |
