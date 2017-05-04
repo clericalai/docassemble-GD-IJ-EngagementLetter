@@ -69,12 +69,14 @@ code: |
 ---
 role: attorney
 question: What is the client's email address?
+subquestion: |
+   You may resume [the interview](${ interview_url() }) later.
 fields:
   - Email Address: client_email
 ---
 role: client
 code: |
-  client_email = client.email_address()
+#  client_email = client.email_address()
   client_salutation = client.salutation
   client_name = client.name
   client_address = client.address_block()
