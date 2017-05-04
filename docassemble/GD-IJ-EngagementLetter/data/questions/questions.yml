@@ -57,7 +57,12 @@ code: |
     import time
     EffectiveDate = time.strftime("%m/%d/%Y")
 ---
-role: organizer
+mandatory: true
+event: force_login
+question: |
+  You must be logged in to proceed.
+---
+role: attorney
 question: |
   This begins the Engagement Letter Process.
   Please provide the attorney's work email.
@@ -72,7 +77,6 @@ fields:
   - Attorney Title: attorney.title
     default: Attorney at Law
   - Attorney Email Address: attorney.email
-fields:
   - Client First Name: client.name.first
     default: ${ client.first_name_hint() }
   - Client Last Name: client.name.last
@@ -122,14 +126,17 @@ code: |
       attorney.email == user_info().email:
     user = attorney
     role = 'attorney'
+    ready = true
   elif user_logged_in() and \
       client.attribute_defined('email') and \
       client.email == user_info().email:
     user = client
     role = 'client'
+    ready = true
   else:
-    user = organizer
-    role = 'organizer'
+    user = anyonymous
+    role = 'anonymous'
+    force_login = true
   set_info(user=user, role=role)
 ---
 event: role_event
