@@ -63,7 +63,7 @@ reconsider: true
 code: |
   multi_user = True
   if user_logged_in() and \
-      attorney.attribute_defined('email') and \
+      user.attribute_defined('email') and \
       user_has_privilege('advocate'):
     user = attorney
     role = 'attorney'
@@ -75,7 +75,6 @@ code: |
     role = 'client'
     ready = true
   else:
-    role = 'anonymous'
     force_login = true
   set_info(user=user, role=role)
 ---
