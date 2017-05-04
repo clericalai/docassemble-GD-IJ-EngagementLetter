@@ -71,7 +71,7 @@ Dated: ${ EffectiveDate }
 | ${ attorney.title }      | Its: ${ client.title } |
 | _Address:_  110 E Houston St,  Eighth Floor, Box 120,  San Antonio, Texas 78205      | _Address:_  ${ client.address_block() } |
 
-Enclosures: ${ Attachments }
+<!-- Enclosures: ${ Attachments } -->
 
 <!-- Questions must include this block
 content file:
