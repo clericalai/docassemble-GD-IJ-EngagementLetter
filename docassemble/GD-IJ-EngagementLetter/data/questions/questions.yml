@@ -102,11 +102,12 @@ question: |
   What are the services covered by this ${ fee_structure } engagment?
 fields:
   - Services: services
-    datatype: checkboxes
+    default: other
     choices:
       - General Counsel: gc
       - Other: other
   - "Describe any Other services": services_description
+    datatype: area
 ---
 role: organizer #attorney
 question: |
