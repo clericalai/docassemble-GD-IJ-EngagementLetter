@@ -18,6 +18,7 @@ modules:
 ---
 objects:
   - case: Case
+  - organizer: Individual
   - client: Individual
   - attorney: Individual
   - pleading: LegalFiling
@@ -97,6 +98,7 @@ code: |
     user = client
     role = 'client'
   else:
+    user = organizer
     role = 'organizer'
   set_info(user=user, role=role)
 ---
