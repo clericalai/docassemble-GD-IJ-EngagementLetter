@@ -45,6 +45,27 @@ code: |
 #   name of case.judge is ever needed, docassemble will use the question
 #   above to ask "What is the name of the judge in the case?"
 ---
+generic object: Individual
+question: |
+  What is ${ x.object_possessive('address') }?
+fields:
+  - address: x.address.address
+  - unit: x.address.unit
+    required: False
+  - city: x.address.city
+  - state: x.address.city
+  - zip: x.address.zip
+  - country: x.address.country
+    default: 'US'
+code: |
+  address_block()
+# comment: |
+#   If the object does not have a name yet, generic questions can refer
+#   to it by the name of the variable itself.  For example, suppose you
+#   create an object, case.judge, with the class of Individual.  If the
+#   name of case.judge is ever needed, docassemble will use the question
+#   above to ask "What is the name of the judge in the case?"
+---
 mandatory: true
 code: |
   case.court = court
