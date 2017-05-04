@@ -62,9 +62,9 @@ subquestion: |
    You may resume [the interview](${ interview_url() }) later.
 fields:
   - First Name: client.name.first
-    default: ${ x.first_name_hint() }
+    default: ${ client.first_name_hint() }
   - Last Name: client.name.last
-    default: ${ x.last_name_hint() }
+    default: ${ client.last_name_hint() }
   - Email Address: client.email
 ---
 mandatory: true
