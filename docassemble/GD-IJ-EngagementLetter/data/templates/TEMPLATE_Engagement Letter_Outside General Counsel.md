@@ -1,6 +1,4 @@
-﻿
-
-[FILE docassemble.GD-IJ-EngagementLetter:firmlogo.png]
+[FILE docassemble.GD-IJ-EngagementLetter:firmlogo.jpg]
 
 _${ Effective.Date }_
 
