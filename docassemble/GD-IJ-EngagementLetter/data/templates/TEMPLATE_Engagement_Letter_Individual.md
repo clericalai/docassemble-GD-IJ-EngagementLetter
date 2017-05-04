@@ -19,15 +19,15 @@ You, **${ client.name }**, are our client. This letter confirms the terms on whi
 
 **Attorneys' Fees.**
 
-## % if fee_structure is 'flat_fee':
+% if fee_structure is 'flat_fee':
   You agree to pay Innocenti Jones a flat fee of $[NBSP]${ FeeAmount }. At least ${ DepositAmount } of the fee must be received before we will render any services associated with this engagement.
-## % elif if fee_structure is 'retainer':
+% elif if fee_structure is 'retainer':
   You agree to pay Innocenti Jones a monthly flat fee of $[NBSP]${ FeeAmount }. Modification of monthly amount.   After the first ${ InitialTerm } months of this engagement, with reasonable notice, we or you may propose to modify this agreement.  We agree to review the amount of actual time expended and the future expectations and discuss whether an adjustment is appropriate. 
-## % elif if fee_structure is 'hourly':
+% elif if fee_structure is 'hourly':
   Fees will be billed monthly and invoiced to client.  Invoices are due and payable  upon receipt. At least $[NBSP]${ DepositAmount } of the fee must be received before we will render any services associated with this engagement.
-## % else:
+% else:
   Fees will be billed monthly and invoiced to client.  Invoices are due and payable  upon receipt.
-## % endif 
+% endif 
 
 **Recording time.**
 ## % if fee_structure is 'flat_fee' or 'retainer':
