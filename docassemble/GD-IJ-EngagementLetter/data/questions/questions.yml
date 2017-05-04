@@ -97,7 +97,7 @@ role: organizer #attorney
 question: |
   What are the fee rates for this ${ fee_structure } engagment?
 fields:
-  - {$ fee_structure } Fee Amount: FeeAmount
+  - Fee Amount: FeeAmount
   - Deposit Amount: DepositAmount
   - Initial (Minimum) Term: InitialTerm
   - Base Hourly/Overage Rate: HourlyOverageFee
