@@ -26,12 +26,10 @@ code: |
   multi_user = True
 ---
 initial: true
-reconsider: true
 code: |
   if not user_logged_in():
     force_login
 ---
-mandatory: true
 event: force_login
 question: |
   You must be logged in to proceed.
@@ -72,6 +70,7 @@ fields:
   - Attorney Title: advocate.title
     default: Attorney at Law
   - Attorney Email Address: advocate.email
+    default: ${ user_info().email }
   - Client First Name: client.name.first
     default: ${ client.first_name_hint() }
   - Client Last Name: client.name.last
