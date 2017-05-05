@@ -71,10 +71,10 @@ fields:
     default: Attorney at Law
   - Attorney Email Address: advocate.email
     default: ${ user_info().email }
-  - Client First Name: client.name.first
-  - Client Last Name: client.name.last
-  - Client Title: client.title
-    default: Individual
+#  - Client First Name: client.name.first
+#  - Client Last Name: client.name.last
+#  - Client Title: client.title
+#    default: Individual
   - Client Email Address: client.email
 ---
 role: advocate
